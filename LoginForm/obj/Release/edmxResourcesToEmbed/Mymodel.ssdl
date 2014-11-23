@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CredentialsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\IIT\L5\GUGSI\LOGIN FORM MVC\LOGINFORM\LOGINFORM\APP_DATA\CREDENTIALSDB.MDF.dbo.Table' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CredentialsDBModelStoreContainer">
+    <EntitySet Name="Table" EntityType="Self.Table" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table].[username] AS [username], 
+    [Table].[password] AS [password]
+    FROM [dbo].[Table] AS [Table]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
